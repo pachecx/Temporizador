@@ -88,19 +88,22 @@ btnStop.addEventListener('click', function(){
 soundOff.addEventListener('click', function(){
     soundOff.classList.add('hide')
     soundOn.classList.remove('hide')
-
     musicOn()
 })
 
 soundOn.addEventListener('click', function(){
     soundOn.classList.add('hide')
     soundOff.classList.remove('hide')
-
     musicOff()
 })
 
 btnSet.addEventListener('click', function(){
-    minutes = prompt('Quantos minutos?') || 0
+    minutes = prompt('Quantos minutos?') 
+
+    if (minutes <= 1) {
+        alert('teste')
+        return
+    }
 
     if(isNaN(minutes)){
         alert('Por favor, insira apenas números.')
@@ -111,8 +114,6 @@ btnSet.addEventListener('click', function(){
         alert('Um número entre 0 e 100')
         return
     }
-
-
     minutesDisplay.textContent = String(minutes).padStart(2, "0")
 })
 
