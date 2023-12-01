@@ -98,13 +98,13 @@ soundOn.addEventListener('click', function(){
 })
 
 btnSet.addEventListener('click', function(){
-    minutes = prompt('Quantos minutos?') 
+    minutes = prompt('Quantos minutos?')
+    console.log(typeof minutes)
 
-    if (minutes <= 1) {
-        alert('teste')
+    if(minutes ===''){
+        console.log('teste')
         return
     }
-
     if(isNaN(minutes)){
         alert('Por favor, insira apenas números.')
         return
@@ -116,10 +116,3 @@ btnSet.addEventListener('click', function(){
     }
     minutesDisplay.textContent = String(minutes).padStart(2, "0")
 })
-
-
-
-
-
-
-
